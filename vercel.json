@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/summarize",
+      "destination": "/api/summarize.ts"
+    }
+  ],
+  "functions": {
+    "api/summarize.ts": {
+      "includeFiles": "docs/**"
+    }
+  }
+}

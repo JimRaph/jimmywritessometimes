@@ -1,0 +1,29 @@
+[
+  {
+    "title": "From Zero to Foundation Models",
+    "cover": "/img/md1.png",
+    "date": "2025-12-25T08:59:52.021Z",
+    "slug": "module-1-the-atom-of-intelligence",
+    "tags": [
+      "Perceptron",
+      "Atom",
+      "Bias",
+      "Activation Function",
+      "Logits",
+      "Data",
+      "Weight",
+      "Neuron"
+    ],
+    "description": "",
+    "link": "/articles/zero-to-foundational-models/module-1-the-atom-of-intelligence"
+  },
+  {
+    "title": "Module 2: The Decision Process",
+    "cover": "/img/md2.png",
+    "date": "2025-12-25T09:53:51.005Z",
+    "slug": "module-2-the-decision-process",
+    "tags": [],
+    "description": "",
+    "link": "/articles/zero-to-foundational-models/module-2-the-decision-process"
+  }
+]
