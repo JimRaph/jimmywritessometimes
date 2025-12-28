@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import SearchBar from '../components/SearchBar';
+import SearchBarWrapper from '../components/SearchBarWrapper';
 
 
 interface Article {
@@ -68,7 +68,7 @@ export default function Home(): React.JSX.Element {
           <p className="landing-hero-sub">AI and Software Engineering.</p>
       </header>
       
-      <SearchBar /> 
+      <SearchBarWrapper /> 
       
       <main className="landing-container">
         <div className={`landing-grid ${loading ? 'grid-loading' : 'grid-loaded'}`}>

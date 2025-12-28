@@ -112,5 +112,3 @@ vercel dev --debug
 - The Xenova embedding model is downloaded once and stored locally
 - Subsequent runs reuse the cached model
 - This avoids repeated downloads and improves startup time
-
-.

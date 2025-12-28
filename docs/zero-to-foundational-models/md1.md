@@ -193,9 +193,9 @@ This is why bias is critical, it gives the model flexibility to shift decisions 
 
 For example, in process decision 3, z = 0. sigmoid(0) = 0.5 always. With bias, the neuron can output something different from 0.5, which allows for a better learning chance.
 
-![By Qef (talk) - Created from scratch with gnuplot, Public Domain, https://commons.wikimedia.org/w/index.php?curid=4310325](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/960px-Logistic-curve.svg.png)
+<!-- ![By Qef (talk) - Created from scratch with gnuplot, Public Domain, https://commons.wikimedia.org/w/index.php?curid=4310325](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/960px-Logistic-curve.svg.png)
 
-*By Qef (talk) - Created from scratch with gnuplot, Public Domain,* [*https://commons.wikimedia.org/w/index.php?curid=4310325*](https://commons.wikimedia.org/w/index.php?curid=4310325)
+*By Qef (talk) - Created from scratch with gnuplot, Public Domain,* [*https://commons.wikimedia.org/w/index.php?curid=4310325*](https://commons.wikimedia.org/w/index.php?curid=4310325) -->
 
 **What can Our Neuron do and not do?**
 --------------------------------------

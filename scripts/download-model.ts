@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const MODEL_NAME = 'Xenova/all-MiniLM-L6-v2';
-const OUTPUT_DIR = path.join(__dirname, '../static/models', MODEL_NAME);
+const OUTPUT_DIR = path.join(__dirname, '../ai_models/models', MODEL_NAME);
 
 const ROOT_FILES = [
   'config.json',

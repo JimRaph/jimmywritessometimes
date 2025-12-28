@@ -3,13 +3,14 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import path from 'path'
 
 
 const config: Config = {
   title: 'JimmyWritesSometimes',
   tagline: 'Learn all about software engineering and AI.',
 
-  favicon: 'favicon.ico',
+  favicon: '/img/favicon.ico',
   future: {
     v4: true,
   },
@@ -32,21 +33,29 @@ const config: Config = {
   
   headTags: [
     {
+      tagName: 'meta',
+      attributes: {
+        name: 'theme-color',
+        content: '#0f172a',
+      },
+    },
+    {
       tagName: 'link',
       attributes: {
         rel: 'apple-touch-icon',
         sizes: '180x180',
-        href: 'apple-touch-icon.png',
+        href: '/img/apple-touch-icon.png',
       },
     },
     {
       tagName: 'link',
       attributes: {
         rel: 'manifest',
-        href: 'site.webmanifest',
+        href: '/site.webmanifest',
       },
     },
   ],
+
 
   presets: [
     [
@@ -76,7 +85,7 @@ const config: Config = {
   // ],
   
   themeConfig: {
-    image: 'social-card.png',
+    image: 'img/social-card.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -124,7 +133,48 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  staticDirectories: ['static', 'ai_models'],
+  plugins: [
+    // This is your local "Binary Fix" plugin
+    async function myWebpackLoaderPlugin(context, options) {
+      return {
+        name: 'webpack-binary-loader',
+        configureWebpack(config, isServer) {
+          return {
+            module: {
+              rules: [
+                {
+                  test: /\.(onnx|bin|dat|json)$/,
+                  resourceQuery: /url/,
+                  type: 'asset/resource',
+                },
+              ],
+            },
+          };
+        },
+      };
+    },
 
+    async function binaryAssetPlugin() {
+      return {
+        name: 'binary-asset-plugin',
+        configureWebpack(config, isServer) {
+          if (isServer) {
+            return {
+              resolve: {
+                alias: {
+                  // Tell the server to load a 'dummy' component instead of the real AI one
+                  './SearchBar': path.resolve(__dirname, 'src/components/EmptyComponent.tsx'),
+                },
+              },
+            };
+          }
+          return {}; // Browser build gets the real thing
+        },
+      };
+    }
+  ],
+  
 };
 
 export default config;

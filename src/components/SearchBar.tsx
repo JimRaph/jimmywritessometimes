@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { pipeline, env } from '@xenova/transformers';
+// import { pipeline, env } from '@xenova/transformers';
 import { Search, Loader2, FileText, X } from 'lucide-react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -37,6 +37,12 @@ export default function SearchBar() {
     
     setIsInitializing(true);
     try {
+      // build kept crashing and it's because this import at top level
+      // so I moved it here to make it dynamic. This avoids build time evaluation
+      // Docusaurus doesn't have a loader to deal with WASM or associated binary files
+      // so it kept crashing. 
+      const { pipeline, env } = await import('@xenova/transformers');
+
       env.allowLocalModels = true;
       env.localModelPath = modelLocalPath;
       env.allowRemoteModels = false;
