@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "index": "ts-node scripts/generate-metadata.ts && scripts/generate-embeddings.ts",
+    "index": "NODE_OPTIONS='--loader ts-node/esm --no-warnings' ts-node --esm scripts/generate-metadata.ts && NODE_OPTIONS='--loader ts-node/esm --no-warnings' ts-node --esm scripts/generate-embeddings.ts",
     "build": "npm run index && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
