@@ -33,7 +33,7 @@ export default function Summary() {
           </div>
         </Admonition>
       ) : (
-        <div className="summary-placeholder">Jimmy is summarizing content, please hold...</div>
+        <div className="summary-placeholder">Jimmy is summarizing content, please hold....</div>
       )}
     </div>
   );

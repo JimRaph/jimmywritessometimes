@@ -3,14 +3,13 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import path from 'path';
 
 
 const config: Config = {
   title: 'JimmyWritesSometimes',
   tagline: 'Learn all about software engineering and AI.',
 
-
+  favicon: 'favicon.ico',
   future: {
     v4: true,
   },
@@ -22,7 +21,7 @@ const config: Config = {
 
 
   organizationName: 'JimRaph', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'jimmywritessometimes', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -31,6 +30,23 @@ const config: Config = {
     locales: ['en'],
   },
   
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: 'apple-touch-icon.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'manifest',
+        href: 'site.webmanifest',
+      },
+    },
+  ],
 
   presets: [
     [
@@ -50,16 +66,17 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-  stylesheets: [
-  {
-    href: 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css',
-    type: 'text/css',
-    integrity: 'sha384-+fM4eK6txL+LCdB1+2R5PRZ4qj8xK5Fq1rJwC5fj/9cKqq3h76d4dz3QIOHy4T2V',
-    crossorigin: 'anonymous',
-  },
-  ],
+  // stylesheets: [
+  // {
+  //   href: 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css',
+  //   type: 'text/css',
+  //   integrity: 'sha384-+fM4eK6txL+LCdB1+2R5PRZ4qj8xK5Fq1rJwC5fj/9cKqq3h76d4dz3QIOHy4T2V',
+  //   crossorigin: 'anonymous',
+  // },
+  // ],
   
   themeConfig: {
+    image: 'social-card.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -86,6 +103,22 @@ const config: Config = {
       ],
       copyright: `  © ${new Date().getFullYear()} JimmyWritesSometimes.`,
     },
+    metadata: [
+      {
+        name: 'description',
+        content:
+          'JimmyWritesSometimes is a technical blog covering software engineering, AI systems, and practical engineering insights.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'software engineering, artificial intelligence, machine learning, backend engineering, web development, system design, AI tooling',
+      },
+      {
+        name: 'author',
+        content: 'Jimmy',
+      },
+    ],
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
