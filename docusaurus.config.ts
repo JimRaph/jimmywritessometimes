@@ -17,8 +17,8 @@ const config: Config = {
 
 
   url: 'https://jimmyesang.vercel.app',
-
   baseUrl: '/articles/',
+  trailingSlash: true, 
 
 
   organizationName: 'JimRaph', // Usually your GitHub org/user name.
