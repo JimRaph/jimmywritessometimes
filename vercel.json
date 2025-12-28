@@ -14,5 +14,12 @@
       "source": "/articles/(.*)",
       "destination": "/$1"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/articles/",
+      "permanent": true
+    }
   ]
 }
