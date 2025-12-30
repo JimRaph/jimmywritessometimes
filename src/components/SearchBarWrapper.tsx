@@ -15,7 +15,9 @@ export default function SearchBarWrapper() {
   }, []);
 
   return (
-    <BrowserOnly fallback={<div className="search-skeleton">Loading Search...</div>}>
+    <BrowserOnly fallback={
+    <div className="search-skeleton">Loading Search...</div>
+    }>
       {() => {
         if (!Component) return <div className="search-skeleton">Waking up AI...</div>;
         return <Component />;

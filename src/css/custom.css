@@ -256,69 +256,17 @@ p {
   opacity: 0.6;
   font-size:small;
 }
-/* 
-.search-container{
-  width: 60%;
-  margin: 2rem auto;
-}
 
-.search-result-card{
-  padding: 15px; 
-  border-bottom: 1px solid var(--ifm-color-primary); 
-  transition: 0.2s
-}
 
-.search-result-card-title{
-  font-weight: bold; 
-  color: var(--ifm-color-primary);
-}
-
-.search-form-btn{
-  padding: 10px 20px;
-  border-radius: 8px;
-  background-color: var(--ifm-color-primary); 
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.search-form-icon{
-  position: absolute; 
-  left: 10px; 
-  top: 10px; 
-  color: #666;
-}
-
-.search-form-input{
-  width: 100%;
-  padding: 10px 20px; 
-  border-radius: 8px; 
-  border: 1px solid var(--ifm-color-primary);
-  text-align: center;
-}
-
-@media (max-width: 360px){
-  .search-container{
-    width: 70%
-  }
-}
-
-@media (max-width: 425px) {
-  .search-container{
-    width: 80%;
-  } */
-
-  /* Container - Relative is required for the absolute overlay to work */
 .search-container {
   width: 60%;
   margin: 2rem auto;
   position: relative; 
 }
 
-/* Input - Added left padding so text doesn't hit the icon */
 .search-form-input {
   width: 100%;
-  padding: 10px 40px; /* Increased padding-left for the icon */
+  padding: 10px 40px;
   border-radius: 8px; 
   border: 1px solid var(--ifm-color-primary);
   text-align: center;
@@ -330,15 +278,15 @@ p {
   position: absolute; 
   left: 12px; 
   top: 50%;
-  transform: translateY(-50%); /* Perfectly centers icon vertically */
+  transform: translateY(-50%); 
   color: #666;
   z-index: 2;
 }
 
-/* The Floating Overlay */
+
 .search-results-overlay {
   position: absolute;
-  top: calc(100% + 8px); /* Sits right below the input */
+  top: calc(100% + 8px); 
   left: 0;
   right: 0;
   background: var(--ifm-background-surface-color);
@@ -371,6 +319,11 @@ p {
   color: var(--ifm-color-emphasis-700);
 }
 
+.search-skeleton{
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .close-icon {
   cursor: pointer;
   opacity: 0.6;
@@ -384,7 +337,6 @@ p {
   display: block;
 }
 
-/* Updated Result Card to use your primary color */
 .search-result-card {
   padding: 15px; 
   border-bottom: 1px solid var(--ifm-color-primary); 
@@ -430,7 +382,7 @@ p {
   color: var(--ifm-color-primary);
 }
 
-/* Mobile Adjustments */
+
 @media (max-width: 425px) {
   .search-container { width: 90%; }
 }
