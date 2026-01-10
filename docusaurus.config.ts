@@ -1,6 +1,5 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import path from 'path';
@@ -12,6 +11,9 @@ interface ExtendedMetadata {
   tags?: string[];
 }
 
+const absoluteCover = (url?: string) =>
+  url ? new URL(url, 'https://jimmywritessometimes.vercel.app').href : '';
+
 const config: Config = {
   title: 'JimmyWritesSometimes',
   tagline: 'Learn all about software engineering and AI.',
@@ -19,7 +21,7 @@ const config: Config = {
   future: { v4: true },
 
   url: 'https://jimmyesang.vercel.app',
-  baseUrl: '/',
+  baseUrl: '/articles/',
   trailingSlash: true,
 
   organizationName: 'JimRaph',
@@ -33,10 +35,7 @@ const config: Config = {
   },
 
   headTags: [
-    {
-      tagName: 'meta',
-      attributes: { name: 'theme-color', content: '#0f172a' },
-    },
+    { tagName: 'meta', attributes: { name: 'theme-color', content: '#0f172a' } },
     {
       tagName: 'link',
       attributes: {
@@ -45,27 +44,50 @@ const config: Config = {
         href: '/img/apple-touch-icon.png',
       },
     },
-    {
-      tagName: 'link',
-      attributes: { rel: 'manifest', href: '/site.webmanifest' },
-    },
+    { tagName: 'link', attributes: { rel: 'manifest', href: '/site.webmanifest' } },
   ],
 
-  presets: [
+ presets: [
     [
       'classic',
       {
         docs: {
           path: 'docs',
           sidebarPath: './sidebars.ts',
-          routeBasePath: '/',
+          routeBasePath: '/', 
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
+        },
+        blog: {
+          path: 'articles', 
+          routeBasePath: '/', 
+          postsPerPage: 10,
+          feedOptions: {
+            type: 'all',
+            title: 'JimmyWritesSometimes',
+            description: 'Learn all about software engineering and AI.',
+            createFeedItems: async ({ blogPosts }) => {
+              return blogPosts.map((post: BlogPost) => {
+                const meta = post.metadata as ExtendedMetadata & typeof post.metadata;
+                return {
+                  title: post.metadata.title,
+                  date: post.metadata.date,
+                  link: post.metadata.permalink, 
+                  description: post.metadata.description ?? '',
+                  custom_elements: [
+                    { 'media:thumbnail': { _attr: { url: absoluteCover(meta.cover) } } },
+                    { series: meta.series ?? '' },
+                    { tags: meta.tags?.join(', ') ?? '' },
+                  ],
+                };
+              });
+            },
+          },
         },
         theme: {
           customCss: './src/css/custom.css',
         },
-      } satisfies Preset.Options,
+      },
     ],
   ],
 
@@ -75,11 +97,7 @@ const config: Config = {
     navbar: {
       title: 'JimmyWritesSometimes',
       items: [
-        {
-          href: 'https://github.com/jimraph',
-          label: 'GitHub',
-          position: 'right',
-        },
+        { href: 'https://github.com/jimraph', label: 'GitHub', position: 'right' },
       ],
     },
     footer: {
@@ -103,42 +121,11 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-  } satisfies Preset.ThemeConfig,
+  },
 
   staticDirectories: ['static', 'ai_models'],
 
   plugins: [
-    [
-      '@docusaurus/plugin-content-blog',
-      {
-        id: 'articles',
-        path: 'articles',
-        routeBasePath: 'articles',
-        postsPerPage: 10,
-        feedOptions: {
-          type: 'all',
-          title: 'JimmyWritesSometimes',
-          description: 'Learn all about software engineering and AI.',
-          createFeedItems: async ({ blogPosts }) => {
-            return blogPosts.map((post: BlogPost) => {
-              const meta = post.metadata as ExtendedMetadata & typeof post.metadata;
-              return {
-                title: post.metadata.title,
-                date: post.metadata.date, // already a Date
-                link: post.metadata.permalink,
-                description: post.metadata.description ?? '',
-                custom_elements: [
-                  { 'media:thumbnail': { _attr: { url: meta.cover ?? '' } } },
-                  { series: meta.series ?? '' },
-                  { tags: meta.tags?.join(', ') ?? '' },
-                ],
-              };
-            });
-          },
-        },
-      },
-    ],
-
     async function myWebpackLoaderPlugin() {
       return {
         name: 'webpack-binary-loader',
