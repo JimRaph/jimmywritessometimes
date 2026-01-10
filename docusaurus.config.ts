@@ -6,6 +6,16 @@ import rehypeKatex from 'rehype-katex';
 import path from 'path'
 
 
+interface BlogPostMetadata { 
+  title: string; 
+  date: string; 
+  permalink: string; 
+  description?: string; 
+  cover?: string; 
+  series?: string; 
+  tags?: string[]; 
+}
+
 const config: Config = {
   title: 'JimmyWritesSometimes',
   tagline: 'Learn all about software engineering and AI.',
@@ -145,7 +155,19 @@ const config: Config = {
            type: 'all',
            title: 'JimmyWritesSometimes',
            description: 'Learn all about software engineering and AI.',
-    },
+          },
+         createFeedItems: async ({blogPosts}) => {
+          return blogPosts.map((post: { metadata: BlogPostMetadata }) => ({ 
+            title: post.metadata.title, 
+            date: post.metadata.date, 
+            link: post.metadata.permalink, 
+            description: post.metadata.description, 
+            custom_elements: [ 
+              { 'media:thumbnail': { _attr: { url: post.metadata.cover } } },
+              { series: post.metadata.series }, 
+              { tags: post.metadata.tags?.join(', ') }, 
+            ], }));
+         }
       }
     ],  
     async function myWebpackLoaderPlugin(context, options) {
