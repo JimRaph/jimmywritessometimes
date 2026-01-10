@@ -59,8 +59,9 @@ const config: Config = {
           rehypePlugins: [rehypeKatex],
         },
         blog: {
+          id: 'articles',
           path: 'articles', 
-          routeBasePath: '/', 
+          routeBasePath: 'articles', 
           postsPerPage: 10,
           feedOptions: {
             type: 'all',
