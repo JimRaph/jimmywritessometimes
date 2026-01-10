@@ -3,16 +3,7 @@ import type { Config } from '@docusaurus/types';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import path from 'path';
-import type { BlogPost } from '@docusaurus/plugin-content-blog';
 
-interface ExtendedMetadata {
-  cover?: string;
-  series?: string;
-  tags?: string[];
-}
-
-const absoluteCover = (url?: string) =>
-  url ? new URL(url, 'https://jimmywritessometimes.vercel.app').href : '';
 
 const config: Config = {
   title: 'JimmyWritesSometimes',
@@ -57,33 +48,6 @@ const config: Config = {
           routeBasePath: '/', 
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-        },
-        blog: {
-          id: 'articles',
-          path: 'articles', 
-          routeBasePath: 'articles', 
-          postsPerPage: 10,
-          feedOptions: {
-            type: 'all',
-            title: 'JimmyWritesSometimes',
-            description: 'Learn all about software engineering and AI.',
-            createFeedItems: async ({ blogPosts }) => {
-              return blogPosts.map((post: BlogPost) => {
-                const meta = post.metadata as ExtendedMetadata & typeof post.metadata;
-                return {
-                  title: post.metadata.title,
-                  date: post.metadata.date,
-                  link: post.metadata.permalink, 
-                  description: post.metadata.description ?? '',
-                  custom_elements: [
-                    { 'media:thumbnail': { _attr: { url: absoluteCover(meta.cover) } } },
-                    { series: meta.series ?? '' },
-                    { tags: meta.tags?.join(', ') ?? '' },
-                  ],
-                };
-              });
-            },
-          },
         },
         theme: {
           customCss: './src/css/custom.css',

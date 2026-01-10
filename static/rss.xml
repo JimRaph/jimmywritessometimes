@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>JimmyWritesSometimes</title>
+    <link>https://jimmywritessometimes.vercel.app</link>
+    <description>Learn all about software engineering and AI.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Jan 2026 21:43:02 GMT</lastBuildDate>
+    <pubDate>Fri, 09 Jan 2026 09:53:51 GMT</pubDate>
+    <copyright>© 2026 JimmyWritesSometimes</copyright>
+    <managingEditor>Jimmy</managingEditor>
+    <webMaster>Jimmy</webMaster>
+    <atom:link href="https://jimmywritessometimes.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Module 3: Deep Neural Networks</title>
+      <link>https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-3-deep-neural-networks</link>
+      <guid isPermaLink="true">https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-3-deep-neural-networks</guid>
+      <pubDate>Fri, 09 Jan 2026 09:53:51 GMT</pubDate>
+      <description>Module 3: Deep Neural Networks</description>
+      <category>zero-to-foundational-models</category>
+      <category>Weights</category>
+      <category>Shapes</category>
+      <category>Keras</category>
+      <category>Pytorch</category>
+      <category>Layers</category>
+      <category>DNN</category>
+      <enclosure url="https://jimmywritessometimes.vercel.app/img/md3.png" type="image/png"/>
+      <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://jimmywritessometimes.vercel.app/img/md3.png"/>
+    </item>
+    <item>
+      <title>Module 2: The Decision Process</title>
+      <link>https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-2-the-decision-process</link>
+      <guid isPermaLink="true">https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-2-the-decision-process</guid>
+      <pubDate>Thu, 25 Dec 2025 09:53:51 GMT</pubDate>
+      <description>Module 2: The Decision Process</description>
+      <category>zero-to-foundational-models</category>
+      <category>Gradient descent</category>
+      <category>loss function</category>
+      <category>backpropagation</category>
+      <category>local minimum</category>
+      <category>optimizer</category>
+      <category>forward pass</category>
+      <enclosure url="https://jimmywritessometimes.vercel.app/img/md2.png" type="image/png"/>
+      <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://jimmywritessometimes.vercel.app/img/md2.png"/>
+    </item>
+    <item>
+      <title>From Zero to Foundation Models</title>
+      <link>https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-1-the-atom-of-intelligence</link>
+      <guid isPermaLink="true">https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-1-the-atom-of-intelligence</guid>
+      <pubDate>Thu, 25 Dec 2025 08:59:52 GMT</pubDate>
+      <description>From Zero to Foundation Models</description>
+      <category>zero-to-foundational-models</category>
+      <category>Perceptron</category>
+      <category>Atom</category>
+      <category>Bias</category>
+      <category>Activation Function</category>
+      <category>Logits</category>
+      <category>Data</category>
+      <category>Weight</category>
+      <category>Neuron</category>
+      <enclosure url="https://jimmywritessometimes.vercel.app/img/md1.png" type="image/png"/>
+      <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://jimmywritessometimes.vercel.app/img/md1.png"/>
+    </item>
+  </channel>
+</rss>

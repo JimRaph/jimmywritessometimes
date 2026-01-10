@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "index": "tsx scripts/generate-metadata.ts && tsx scripts/generate-embeddings.ts",
+    "index": "tsx scripts/generate-metadata.ts && tsx scripts/generate-embeddings.ts && tsx scripts/generate-rss.ts",
     "build": "npm run index && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
