@@ -30,5 +30,20 @@
       "forward pass"
     ],
     "link": "/articles/zero-to-foundational-models/module-2-the-decision-process"
+  },
+  {
+    "title": "Module 3: Deep Neural Networks",
+    "cover": "/img/md3.png",
+    "date": "2026-01-09T09:53:51.005Z",
+    "series": "zero-to-foundational-models",
+    "tags": [
+      "Weights",
+      "Shapes",
+      "Keras",
+      "Pytorch",
+      "Layers",
+      "DNN"
+    ],
+    "link": "/articles/zero-to-foundational-models/module-3-deep-neural-networks"
   }
 ]
