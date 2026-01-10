@@ -1,38 +1,29 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import path from 'path'
+import path from 'path';
+import type { BlogPost } from '@docusaurus/plugin-content-blog';
 
-
-interface BlogPostMetadata { 
-  title: string; 
-  date: string; 
-  permalink: string; 
-  description?: string; 
-  cover?: string; 
-  series?: string; 
-  tags?: string[]; 
+interface ExtendedMetadata {
+  cover?: string;
+  series?: string;
+  tags?: string[];
 }
 
 const config: Config = {
   title: 'JimmyWritesSometimes',
   tagline: 'Learn all about software engineering and AI.',
-
   favicon: '/img/favicon.ico',
-  future: {
-    v4: true,
-  },
-
+  future: { v4: true },
 
   url: 'https://jimmyesang.vercel.app',
-  baseUrl: '/articles/',
-  trailingSlash: true, 
+  baseUrl: '/',
+  trailingSlash: true,
 
-
-  organizationName: 'JimRaph', // Usually your GitHub org/user name.
-  projectName: 'jimmywritessometimes', // Usually your repo name.
+  organizationName: 'JimRaph',
+  projectName: 'jimmywritessometimes',
 
   onBrokenLinks: 'throw',
 
@@ -40,14 +31,11 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  
+
   headTags: [
     {
       tagName: 'meta',
-      attributes: {
-        name: 'theme-color',
-        content: '#0f172a',
-      },
+      attributes: { name: 'theme-color', content: '#0f172a' },
     },
     {
       tagName: 'link',
@@ -59,13 +47,9 @@ const config: Config = {
     },
     {
       tagName: 'link',
-      attributes: {
-        rel: 'manifest',
-        href: '/site.webmanifest',
-      },
+      attributes: { rel: 'manifest', href: '/site.webmanifest' },
     },
   ],
-
 
   presets: [
     [
@@ -78,33 +62,19 @@ const config: Config = {
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
-       
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
   ],
-  // stylesheets: [
-  // {
-  //   href: 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css',
-  //   type: 'text/css',
-  //   integrity: 'sha384-+fM4eK6txL+LCdB1+2R5PRZ4qj8xK5Fq1rJwC5fj/9cKqq3h76d4dz3QIOHy4T2V',
-  //   crossorigin: 'anonymous',
-  // },
-  // ],
-  
+
   themeConfig: {
     image: 'img/social-card.png',
-    colorMode: {
-      respectPrefersColorScheme: true,
-    },
-    
+    colorMode: { respectPrefersColorScheme: true },
     navbar: {
       title: 'JimmyWritesSometimes',
-
       items: [
-
         {
           href: 'https://github.com/jimraph',
           label: 'GitHub',
@@ -113,14 +83,8 @@ const config: Config = {
       ],
     },
     footer: {
-      style: undefined,
-      links: [
-      
-        {
-          title: 'jimmywritessometimes',
-        },
-      ],
-      copyright: `  © ${new Date().getFullYear()} JimmyWritesSometimes.`,
+      links: [{ title: 'jimmywritessometimes' }],
+      copyright: `© ${new Date().getFullYear()} JimmyWritesSometimes.`,
     },
     metadata: [
       {
@@ -133,47 +97,52 @@ const config: Config = {
         content:
           'software engineering, artificial intelligence, machine learning, backend engineering, web development, system design, AI tooling',
       },
-      {
-        name: 'author',
-        content: 'Jimmy',
-      },
+      { name: 'author', content: 'Jimmy' },
     ],
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
   staticDirectories: ['static', 'ai_models'],
+
   plugins: [
     [
       '@docusaurus/plugin-content-blog',
       {
-         blogTitle: 'JimmyWritesSometimes',
-         postsPerPage: 10,
-         blogDescription: 'Learn all about software engineering and AI.',
-         feedOptions: {
-           type: 'all',
-           title: 'JimmyWritesSometimes',
-           description: 'Learn all about software engineering and AI.',
+        id: 'articles',
+        path: 'articles',
+        routeBasePath: 'articles',
+        postsPerPage: 10,
+        feedOptions: {
+          type: 'all',
+          title: 'JimmyWritesSometimes',
+          description: 'Learn all about software engineering and AI.',
+          createFeedItems: async ({ blogPosts }) => {
+            return blogPosts.map((post: BlogPost) => {
+              const meta = post.metadata as ExtendedMetadata & typeof post.metadata;
+              return {
+                title: post.metadata.title,
+                date: post.metadata.date, // already a Date
+                link: post.metadata.permalink,
+                description: post.metadata.description ?? '',
+                custom_elements: [
+                  { 'media:thumbnail': { _attr: { url: meta.cover ?? '' } } },
+                  { series: meta.series ?? '' },
+                  { tags: meta.tags?.join(', ') ?? '' },
+                ],
+              };
+            });
           },
-         createFeedItems: async ({blogPosts}) => {
-          return blogPosts.map((post: { metadata: BlogPostMetadata }) => ({ 
-            title: post.metadata.title, 
-            date: post.metadata.date, 
-            link: post.metadata.permalink, 
-            description: post.metadata.description, 
-            custom_elements: [ 
-              { 'media:thumbnail': { _attr: { url: post.metadata.cover } } },
-              { series: post.metadata.series }, 
-              { tags: post.metadata.tags?.join(', ') }, 
-            ], }));
-         }
-      }
-    ],  
-    async function myWebpackLoaderPlugin(context, options) {
+        },
+      },
+    ],
+
+    async function myWebpackLoaderPlugin() {
       return {
         name: 'webpack-binary-loader',
-        configureWebpack(config, isServer) {
+        configureWebpack() {
           return {
             module: {
               rules: [
@@ -197,18 +166,19 @@ const config: Config = {
             return {
               resolve: {
                 alias: {
-                  // Tell the server to load a 'dummy' component instead of the real AI one
-                  './SearchBar': path.resolve(__dirname, 'src/components/EmptyComponent.tsx'),
+                  './SearchBar': path.resolve(
+                    __dirname,
+                    'src/components/EmptyComponent.tsx'
+                  ),
                 },
               },
             };
           }
-          return {}; // Browser build gets the real thing
+          return {};
         },
       };
-    }
+    },
   ],
-  
 };
 
 export default config;
