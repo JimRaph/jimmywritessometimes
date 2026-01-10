@@ -135,7 +135,19 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
   staticDirectories: ['static', 'ai_models'],
   plugins: [
-    // This is your local "Binary Fix" plugin
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+         blogTitle: 'JimmyWritesSometimes',
+         postsPerPage: 10,
+         blogDescription: 'Learn all about software engineering and AI.',
+         feedOptions: {
+           type: 'all',
+           title: 'JimmyWritesSometimes',
+           description: 'Learn all about software engineering and AI.',
+    },
+      }
+    ],  
     async function myWebpackLoaderPlugin(context, options) {
       return {
         name: 'webpack-binary-loader',
