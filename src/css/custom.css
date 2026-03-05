@@ -382,6 +382,12 @@ p {
   color: var(--ifm-color-primary);
 }
 
+.mathBox {
+  background-color: #18161f;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
 
 @media (max-width: 425px) {
   .search-container { width: 90%; }

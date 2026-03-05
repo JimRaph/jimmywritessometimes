@@ -10,7 +10,7 @@ weight: 2
 
 # MODULE 2: THE DECISION PROCESS
 
-![module 1](/img/md2.png)
+![module 2](/img/md2.png)
 
 We have established that **W** is a measure of how important **X** is to our final decision. In the scenario we ran in module 1, I manually assigned the weights since we were only dealing with 2 inputs. Imagine we were dealing with hundreds of thousands of inputs. Millions of input. Manual assignment doesn’t look ideal.
 

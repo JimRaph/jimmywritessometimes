@@ -7,12 +7,91 @@
     <link>https://jimmywritessometimes.vercel.app</link>
     <description>Learn all about software engineering and AI.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Jan 2026 21:43:02 GMT</lastBuildDate>
-    <pubDate>Fri, 09 Jan 2026 09:53:51 GMT</pubDate>
+    <lastBuildDate>Thu, 05 Mar 2026 20:43:48 GMT</lastBuildDate>
+    <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
     <copyright>© 2026 JimmyWritesSometimes</copyright>
     <managingEditor>Jimmy</managingEditor>
     <webMaster>Jimmy</webMaster>
     <atom:link href="https://jimmywritessometimes.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Module 6: Attention</title>
+      <link>https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-6-attention</link>
+      <guid isPermaLink="true">https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-6-attention</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Module 6: Attention</description>
+      <category>zero-to-foundational-models</category>
+      <category>Attention</category>
+      <category>Query</category>
+      <category>Key</category>
+      <category>Value</category>
+      <category>Cross-Attention</category>
+      <category>Self-Attention</category>
+      <enclosure url="https://jimmywritessometimes.vercel.app/img/attention.png" type="image/png"/>
+      <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://jimmywritessometimes.vercel.app/img/attention.png"/>
+    </item>
+    <item>
+      <title>Distributed Authentication Architecture</title>
+      <link>https://jimmywritessometimes.vercel.app/articles/Distributed Authentication Architecture</link>
+      <guid isPermaLink="true">https://jimmywritessometimes.vercel.app/articles/Distributed Authentication Architecture</guid>
+      <pubDate>Sun, 01 Mar 2026 16:53:51 GMT</pubDate>
+      <description>Distributed Authentication Architecture</description>
+      <category></category>
+      <category>Authentication</category>
+      <category>Distributed</category>
+      <category>System</category>
+      <category>JWT</category>
+      <category>Redis</category>
+      <category>Microservices</category>
+      <enclosure url="https://jimmywritessometimes.vercel.app/img/Distributed-Auth.png" type="image/png"/>
+      <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://jimmywritessometimes.vercel.app/img/Distributed-Auth.png"/>
+    </item>
+    <item>
+      <title>Module 4: Spatial Data</title>
+      <link>https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-4-spatial-data</link>
+      <guid isPermaLink="true">https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-4-spatial-data</guid>
+      <pubDate>Fri, 27 Feb 2026 09:53:51 GMT</pubDate>
+      <description>Module 4: Spatial Data</description>
+      <category>zero-to-foundational-models</category>
+      <category>Filters</category>
+      <category>Pooling</category>
+      <category>Keras</category>
+      <category>Pytorch</category>
+      <category>Layers</category>
+      <category>CNN</category>
+      <enclosure url="https://jimmywritessometimes.vercel.app/img/cnn.png" type="image/png"/>
+      <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://jimmywritessometimes.vercel.app/img/cnn.png"/>
+    </item>
+    <item>
+      <title>Module 5: Sequential Data</title>
+      <link>https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-5-sequential-data</link>
+      <guid isPermaLink="true">https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-5-sequential-data</guid>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Module 5: Sequential Data</description>
+      <category>zero-to-foundational-models</category>
+      <category>Bidrectional</category>
+      <category>RNNs</category>
+      <category>GRU</category>
+      <category>LSTM</category>
+      <category>Layers</category>
+      <category>Memory</category>
+      <enclosure url="https://jimmywritessometimes.vercel.app/img/rnn.png" type="image/png"/>
+      <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://jimmywritessometimes.vercel.app/img/rnn.png"/>
+    </item>
+    <item>
+      <title>Idempotency</title>
+      <link>https://jimmywritessometimes.vercel.app/articles/idempotency</link>
+      <guid isPermaLink="true">https://jimmywritessometimes.vercel.app/articles/idempotency</guid>
+      <pubDate>Wed, 21 Jan 2026 13:53:51 GMT</pubDate>
+      <description>Idempotency</description>
+      <category></category>
+      <category>Idempotency</category>
+      <category>Idempotency-key</category>
+      <category>Banking</category>
+      <category>Server</category>
+      <category>Security</category>
+      <enclosure url="https://jimmywritessometimes.vercel.app/img/idempotency.png" type="image/png"/>
+      <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://jimmywritessometimes.vercel.app/img/idempotency.png"/>
+    </item>
     <item>
       <title>Module 3: Deep Neural Networks</title>
       <link>https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-3-deep-neural-networks</link>
@@ -26,6 +105,22 @@
       <category>Pytorch</category>
       <category>Layers</category>
       <category>DNN</category>
+      <enclosure url="https://jimmywritessometimes.vercel.app/img/md3.png" type="image/png"/>
+      <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://jimmywritessometimes.vercel.app/img/md3.png"/>
+    </item>
+    <item>
+      <title>Module 7: Transformers</title>
+      <link>https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-7-transformers</link>
+      <guid isPermaLink="true">https://jimmywritessometimes.vercel.app/articles/zero-to-foundational-models/module-7-transformers</guid>
+      <pubDate>Fri, 09 Jan 2026 09:53:51 GMT</pubDate>
+      <description>Module 7: Transformers</description>
+      <category>zero-to-foundational-models</category>
+      <category>Attention</category>
+      <category>MultiHead Attention</category>
+      <category>Encoder</category>
+      <category>Decoder</category>
+      <category>Sine &amp; cosine</category>
+      <category>Transformer</category>
       <enclosure url="https://jimmywritessometimes.vercel.app/img/md3.png" type="image/png"/>
       <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://jimmywritessometimes.vercel.app/img/md3.png"/>
     </item>

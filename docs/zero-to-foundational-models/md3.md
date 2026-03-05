@@ -11,7 +11,7 @@ weight: 3
 
 # MODULE 3: Deep Neural Networks (DNN)
 
-![module 1](/img/md3.png)
+![module 3](/img/md3.png)
 
 One neuron is limited (it can only solve linear problems). To solve complex problems (like recognizing a face), we connect neurons together. This is what deep neural network is all about. Learning complexity through interconnection of neurons, layers and activation functions.
 A typical DNN has three main layers:
